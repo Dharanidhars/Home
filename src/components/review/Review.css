@@ -32,3 +32,33 @@
     display: flex;
     gap: 20px;
 }
+.reviewContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px;
+}
+.leftArrow,.rightArrow{
+    font-size: 2rem;
+    opacity: .5;
+}
+.leftArrow:hover,.leftArrow:focus,.rightArrow:hover,.rightArrow:focus{
+    opacity: 1;
+}
+.dots{
+    margin-top: 10px;
+}
+.dot{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.dot.active{
+    background-color: #333;
+}
