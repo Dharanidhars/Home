@@ -1,0 +1,79 @@
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/homebg.jfif);
+    background-size: cover;
+}
+.searchBox{
+    margin-top: 15%;
+    width: 60%;
+    height: 3rem;
+    padding-left: 20%;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: rgba(248, 248, 255, 0.904);
+    position: absolute;
+}
+select{
+    position: absolute;
+    margin-top: 16%;
+    z-index: 1;
+    left: 23%;
+    height: 30px;
+    width: 130px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.search h1{
+    margin-top: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+.search p{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+}
+.labels{
+    display: flex;
+    width: 100%;
+    margin-top: 200px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.homes{
+    text-align: center;
+}
+.homes h1{
+    font-size: 3rem;
+}
+.homes span{
+    font-size: 3rem;
+    color: white;
+}
+.customer{
+    text-align: center;
+}
+.customer h1{
+    font-size: 2.2rem;
+}
+.customer span{
+    font-size: 3rem;
+    color: white;
+}
+.areas{
+    text-align: center;
+}
+.areas h1{
+    font-size: 3rem;
+}
+.areas span{
+    font-size: 3rem;
+    color: white;
+}

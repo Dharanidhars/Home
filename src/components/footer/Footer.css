@@ -1,0 +1,11 @@
+.footer{
+    display: grid;
+    place-content: center;
+    height: 3rem;
+    background-color: bisque;
+    /* position: sticky; */
+    /* bottom: 0; */
+    width: 100vw;
+    font-size: small;
+    font-weight: bold;
+}
