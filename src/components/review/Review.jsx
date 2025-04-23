@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Review.css";
-import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { FaRegArrowAltCircleLeft, FaStar } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
-const Review = () => {
+const Review = ({noOfStars = 5}) => {
   const reviews = [
     {
       name: "Sarah M",
@@ -22,6 +22,11 @@ const Review = () => {
   ];
 
   const [current, setCurrent] = useState(0);
+  const [rating,setRating] = useState(0)
+
+  const handleRating = (getCurrentIndex) => {
+    setRating(getCurrentIndex)
+  }
 
   const handleNext = () => {
     setCurrent((prev) => (prev + 1) % reviews.length);
@@ -60,6 +65,25 @@ const Review = () => {
             onClick={() => setCurrent(index)}
           ></span>
         ))}
+      </div>
+
+      <div className="addReview">
+        <h2>Add Your Review</h2>
+        <form className="reviewForm">
+          <input type="text" placeholder="Your Name" />
+          <textarea placeholder="Your Review"></textarea>
+          <div className="starRaing">
+              { [...Array(noOfStars)].map((_,index)=>{
+                index += 1
+                return <FaStar
+                  key={index}
+                  onClick={()=>handleRating(index)}
+                  className={ rating === index ? 'starColor': 'noStarColor'}
+                  size={20}
+                />
+              })}
+            </div>
+        </form>
       </div>
     </div>
   );
