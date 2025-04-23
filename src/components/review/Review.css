@@ -96,12 +96,21 @@
 .reviewForm textarea:hover,.reviewForm textarea:focus{
     background-color: bisque;
 }
-.starRating{
-    display: flex;
-}
-.starColor{
+.starActive{
     color: yellow;
 }
-.noStarColor{
+.starInactive{
     color: grey;
+}
+.reviewForm button{
+    width: 150px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: bisque;
+    font-weight: bold;
+}
+.reviewForm button:hover{
+    box-shadow: 2px 2px 4px grey;
 }

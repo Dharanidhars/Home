@@ -26,6 +26,7 @@ const Review = ({noOfStars = 5}) => {
 
   const handleRating = (getCurrentIndex) => {
     setRating(getCurrentIndex)
+    console.log(getCurrentIndex)
   }
 
   const handleNext = () => {
@@ -72,17 +73,21 @@ const Review = ({noOfStars = 5}) => {
         <form className="reviewForm">
           <input type="text" placeholder="Your Name" />
           <textarea placeholder="Your Review"></textarea>
-          <div className="starRaing">
-              { [...Array(noOfStars)].map((_,index)=>{
-                index += 1
-                return <FaStar
-                  key={index}
-                  onClick={()=>handleRating(index)}
-                  className={ rating === index ? 'starColor': 'noStarColor'}
-                  size={20}
-                />
-              })}
-            </div>
+          <div className="starRating">
+              {
+                [...Array(noOfStars)].map((_,index)=>{
+                  index += 1
+
+                  return <FaStar
+                   key={index}
+                   onClick={()=>handleRating(index)}
+                   className={index <= rating ? 'starActive' : 'starInactive'}
+                   size={25}
+                  />
+                })
+              }
+          </div>
+          <button>Submit</button>
         </form>
       </div>
     </div>
