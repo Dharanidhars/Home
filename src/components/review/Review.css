@@ -23,7 +23,7 @@
     width: 400px;
     height: 200px;
     gap: 20px;
-    background-color: bisque;
+    background-color:var(--bgColor);
 }
 .reviewMessage{
     font-style: italic;
@@ -108,7 +108,7 @@
     border-radius: 10px;
     border: none;
     outline: none;
-    background-color: bisque;
+    background-color: var(--btnBgColor);
     font-weight: bold;
 }
 .reviewForm button:hover{

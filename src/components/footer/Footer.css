@@ -2,7 +2,7 @@
     display: grid;
     place-content: center;
     height: 3rem;
-    background-color: bisque;
+    background-color: var(--bgColor);
     /* position: sticky; */
     /* bottom: 0; */
     width: 100vw;

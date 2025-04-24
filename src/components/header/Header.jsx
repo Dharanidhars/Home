@@ -14,10 +14,10 @@ const Header = () => {
         </div>
         <div className="right">
           <Router>
-            <Link to='#home' offset={100} scrolling='smooth' >Home</Link>
-            <Link to='#about' offset={100} scrolling='smooth'>About</Link>
-            <Link to='#contact' offset={100} scrolling='smooth'>Contact</Link>
-            <Link to='/signin'>Sign in</Link>
+            <Link to='#home' offset={100} scrolling='smooth' className='navs home' >Home <hr /></Link>
+            <Link to='#about' offset={100} scrolling='smooth'  className='navs about' >About</Link>
+            <Link to='#contact' offset={100} scrolling='smooth'  className='navs contact' >Contact</Link>
+            <Link to='/signin'  className='navs signin' >Sign in</Link>
             <Routes>
               <Route path='/signin' element={<Signin />} />
             </Routes>

@@ -42,7 +42,7 @@ textarea{
     font-weight: bold;
 }
 .contactInputs button:hover,.contactInputs button:focus{
-    background-color: bisque;
+    background-color: var(--btnBgColor);
     box-shadow: 2px 2px 5px grey;
 }
 .socialMedia{

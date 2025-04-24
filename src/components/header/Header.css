@@ -4,7 +4,7 @@
     align-items: center;
     height: 5rem;
     padding: 10px 70px;
-    background-color: bisque;
+    background-color: var(--bgColor);
     position: sticky;
     top: 0;
     width: 100vw;
@@ -26,4 +26,15 @@
     align-items: center;
     gap: 30px;
     font-size: 1.2rem;
+    height: 5rem;
+}
+.right .navs{
+    height: 2rem;
+}
+hr{
+    margin-top: 5px;
+    height: 3px;
+    border: none;
+    border-radius: 10px;
+    background-color: aqua;
 }
