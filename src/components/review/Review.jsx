@@ -53,7 +53,6 @@ const Review = ({ noOfStars = 5 }) => {
 
   const handleRating = (getCurrentIndex) => {
     setRating(getCurrentIndex);
-    console.log(getCurrentIndex);
   };
 
   const handleNext = () => {
