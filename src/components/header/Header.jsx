@@ -2,9 +2,6 @@ import React from 'react'
 import logo from '../../assets/logo.png'
 import { Link } from 'react-scroll'
 import './Header.css'
-import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
-import Signin from '../signin/Signin'
-
 const Header = () => {
   return (
     <div className='header' id='header'>
@@ -13,15 +10,12 @@ const Header = () => {
         <h1>Homie</h1>
         </div>
         <div className="right">
-          <Router>
-            <Link to='#home' offset={100} scrolling='smooth' className='navs home' >Home <hr /></Link>
-            <Link to='#about' offset={100} scrolling='smooth'  className='navs about' >About</Link>
-            <Link to='#contact' offset={100} scrolling='smooth'  className='navs contact' >Contact</Link>
-            <Link to='/signin'  className='navs signin' >Sign in</Link>
-            <Routes>
-              <Route path='/signin' element={<Signin />} />
-            </Routes>
-          </Router>
+
+          <Link to='home' activeClass='activeNav' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenu'  > Home </Link>
+          <Link to='about' activeClass='activeNav' spy={true} smooth={true} offset={-50} duration={500} className='desktopMenu'  > About </Link>
+          <Link to='contact' activeClass='activeNav' spy={true} smooth={true} offset={-50} duration={500} className='desktopMenu'  > Contact </Link>
+          <Link className='desktopMenu' > Signin </Link>
+          
         </div>
     </div>
   )

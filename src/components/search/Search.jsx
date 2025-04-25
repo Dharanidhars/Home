@@ -9,7 +9,7 @@ const Search = () => {
   };
 
   return (
-    <div className="search">
+    <div className="search" id="home">
       <h1>Properties for rent in {city}</h1>
       <p>10K+ listings added daily and 50k+ total verified</p>
       <select id="city" value={city} onChange={handleCityName}>

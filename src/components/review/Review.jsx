@@ -4,7 +4,7 @@ import { FaRegArrowAltCircleLeft, FaStar } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const Review = ({ noOfStars = 5 }) => {
-  const [reviews,setReviews] = useState([
+  const [reviews, setReviews] = useState([
     {
       name: "Sarah M",
       message:
@@ -22,7 +22,7 @@ const Review = ({ noOfStars = 5 }) => {
         "Homie made the entire rental process so easy. I found a place I loved, scheduled a visit, and signed the lease—all in one week!",
       rating: 4,
     },
-  ])
+  ]);
 
   const [current, setCurrent] = useState(0);
   const [rating, setRating] = useState(0);
@@ -38,18 +38,17 @@ const Review = ({ noOfStars = 5 }) => {
     }
 
     const newReview = {
-      name : newName,
-      message : newMessage,
-      rating : rating
-    }
+      name: newName,
+      message: newMessage,
+      rating: rating,
+    };
 
-    setCurrent(reviews.length)
-    setReviews(prevReviews => [...prevReviews,newReview])
+    setCurrent(reviews.length);
+    setReviews((prevReviews) => [...prevReviews, newReview]);
 
-    setNewName("")
-    setNewMessage("")
-    setRating(0)
-
+    setNewName("");
+    setNewMessage("");
+    setRating(0);
   };
 
   const handleRating = (getCurrentIndex) => {
@@ -82,6 +81,11 @@ const Review = ({ noOfStars = 5 }) => {
           <div className="customers">
             <p className="reviewMessage">"{reviews[current].message}"</p>
             <h2 className="costomersName">- {reviews[current].name}</h2>
+            <p className="customerRating">
+              {[...Array(reviews[current].rating)].map(() => {
+                return <FaStar />;
+              })}
+            </p>
           </div>
         </div>
         <FaRegArrowAltCircleRight className="rightArrow" onClick={handleNext} />

@@ -114,3 +114,7 @@
 .reviewForm button:hover{
     box-shadow: 2px 2px 4px grey;
 }
+.customerRating{
+    color: yellow;
+    filter: drop-shadow(0px 0px 1px black);
+}

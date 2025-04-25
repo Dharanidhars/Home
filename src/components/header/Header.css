@@ -26,15 +26,12 @@
     align-items: center;
     gap: 30px;
     font-size: 1.2rem;
-    height: 5rem;
 }
-.right .navs{
+.desktopMenu{
     height: 2rem;
+    cursor: pointer;
 }
-hr{
-    margin-top: 5px;
-    height: 3px;
-    border: none;
-    border-radius: 10px;
-    background-color: aqua;
+.activeNav{
+    padding-bottom: 30px;
+    border-bottom: 3px solid aqua;
 }
