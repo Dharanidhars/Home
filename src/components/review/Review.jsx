@@ -22,6 +22,16 @@ const Review = ({ noOfStars = 5 }) => {
         "Homie made the entire rental process so easy. I found a place I loved, scheduled a visit, and signed the lease—all in one week!",
       rating: 4,
     },
+    {
+      name: "Jessica M",
+      message: "My Homie made my apartment hunt so easy! I found a great place in just two days, and the photos matched exactly what I saw in person. Super reliable.",
+      rating:4
+    },
+    {
+      name:"Meena R",
+      message: "As a college student in Trichy, it was tough to find safe and affordable rentals. Found a great 1BHK through My Homie. The app is super easy to use, even for first-timers.",
+      rating:5
+    }
   ]);
 
   const [current, setCurrent] = useState(0);
@@ -81,8 +91,9 @@ const Review = ({ noOfStars = 5 }) => {
             <p className="reviewMessage">"{reviews[current].message}"</p>
             <h2 className="costomersName">- {reviews[current].name}</h2>
             <p className="customerRating">
-              {[...Array(reviews[current].rating)].map(() => {
-                return <FaStar />;
+              {[...Array(reviews[current].rating)].map((_,index) => {
+                return <FaStar key={index}
+                />;
               })}
             </p>
           </div>
