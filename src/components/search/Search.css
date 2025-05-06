@@ -7,28 +7,7 @@
     background-image: url(../../assets/homebg.jfif);
     background-size: cover;
 }
-.searchBox{
-    margin-top: 15%;
-    width: 50%;
-    height: 3rem;
-    padding-left: 20%;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    background-color: rgba(248, 248, 255, 0.904);
-    position: absolute;
-}
-select{
-    position: absolute;
-    margin-top: 210px;
-    z-index: 1;
-    left: 28%;
-    height: 30px;
-    width: 130px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-}
+
 .search h1{
     margin-top: 50px;
     color: white;
@@ -43,7 +22,7 @@ select{
 .labels{
     display: flex;
     width: 100%;
-    margin-top: 300px;
+    margin-top: 200px;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -77,3 +56,37 @@ select{
     font-size: 3rem;
     color: white;
 }
+
+
+.searchBarContainer {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .cityDropdown {
+    padding: 10px;
+    height: 44px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 20px 0px 0px 20px;
+    background-color: white;
+    min-width: 150px;
+  }
+  
+  .searchBox {
+    flex: 1;
+    padding: 10px;
+    height: 44px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 0px 20px 20px 0px;
+    background-color :white;
+    padding-left: 20px;
+  }
+
+  
