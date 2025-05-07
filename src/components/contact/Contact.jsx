@@ -10,9 +10,9 @@ const Contact = () => {
     <div className='contact' id='contact'>
         <h1 className='contactHeader'>Contact Us</h1>
         <div className='contactInputs'>
-        <input type="text" placeholder='Enter your name' className='contactName' />
-        <input type='email' placeholder='Enter your e-mail' className='contactEmail' />
-        <textarea placeholder='Enter your Message' rows='10' ></textarea>
+        <input type="text" placeholder='Enter your name' className='contactName' name='name' />
+        <input type='email' placeholder='Enter your e-mail' className='contactEmail' name='email'/>
+        <textarea placeholder='Enter your Message' rows='10' name='message'></textarea>
         <button>Submit</button>
         </div>
 

@@ -19,7 +19,7 @@ const Search = () => {
             onChange={handleCityName}
             className="cityDropdown"
           >
-            <option value="">Select City</option>
+            <option value="City">Select City</option>
             <option value="Chennai">Chennai</option>
             <option value="Coimbatore">Coimbatore</option>
             <option value="Madurai">Madurai</option>
