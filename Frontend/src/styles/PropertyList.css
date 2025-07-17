@@ -1,0 +1,159 @@
+.property-list {
+  padding: 20px;
+}
+
+.property-list h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #333;
+}
+
+.property-grid,
+.property-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.property-card {
+  flex: 0 0 auto;
+  width: 280px;
+  scroll-snap-align: start;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-image-wrapper {
+  position: relative;
+}
+
+.property-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.property-status {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #4caf50;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.property-status.rented {
+  background: #e53935;
+}
+
+.property-status.available {
+  background: #4caf50;
+}
+
+.property-content {
+  margin-top: 10px;
+}
+
+.property-card h3 {
+  font-size: 18px;
+  margin: 8px 0 4px;
+  color: #333;
+}
+
+.property-card p {
+  font-size: 14px;
+  margin: 2px 0;
+  color: #666;
+}
+
+.wishlist-button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.view-details-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Smooth scrollbar */
+.property-grid::-webkit-scrollbar,
+.property-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.property-grid::-webkit-scrollbar-thumb,
+.property-carousel::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .property-card {
+    width: 230px;
+    padding: 12px;
+  }
+
+  .property-card h3 {
+    font-size: 16px;
+  }
+
+  .view-details-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-list {
+    padding: 10px;
+  }
+
+  .property-card {
+    width: 200px;
+    padding: 10px;
+  }
+
+  .property-card img {
+    height: 130px;
+  }
+
+  .property-card h3 {
+    font-size: 15px;
+  }
+}

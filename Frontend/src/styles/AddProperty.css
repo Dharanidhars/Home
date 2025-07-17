@@ -1,0 +1,56 @@
+.add-property-form {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px 50px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.add-property-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.add-property-form input,
+.add-property-form textarea,
+.add-property-form select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.add-property-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.add-property-form input:focus,
+.add-property-form textarea:focus {
+  outline: none;
+  border-color: #6c63ff;
+  background: #fff;
+}
+
+.add-property-form button {
+  padding: 14px;
+  background-color: #6c63ff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .add-property-form {
+    padding: 25px;
+    margin: 20px;
+  }
+}

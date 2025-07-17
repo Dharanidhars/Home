@@ -1,0 +1,18 @@
+:root {
+  --bgColor: #f9f9f9;
+  --primaryColor: #4EE4C3;
+  --btnBgColor: #4EE4C3;
+  --fontMain: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bgColor);
+  font-family: var(--fontMain);
+  overflow-x: hidden;
+}
+
+main {
+  padding: 20px;
+}
