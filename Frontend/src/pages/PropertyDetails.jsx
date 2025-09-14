@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import StarRating from "../components/StarRating";
 import "../styles/PropertyDetails.css";
 
-const API = "http://localhost:5000";
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const PropertyDetails = () => {
   const { id } = useParams();
