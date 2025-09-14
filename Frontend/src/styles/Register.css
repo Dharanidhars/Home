@@ -1,49 +1,102 @@
-.form-container {
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+/* Page center layout */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f9f9f9;
+  padding: 20px;
 }
 
-form h2 {
+/* Card */
+.register-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-card h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #222;
+  color: #333;
 }
 
-form input,
-form select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+/* Input group with icons */
+.input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #888;
   font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
 }
 
-form input:focus,
-form select:focus {
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 12px 12px 38px; /* space for icon */
+  border: 1px solid #ccc;
+  border-radius: 8px;
   outline: none;
-  border-color: #6c63ff;
-  background-color: #fff;
+  font-size: 15px;
+  transition: border 0.2s;
 }
 
-form button {
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #4a6cf7;
+}
+
+/* Button */
+.btn-submit {
   width: 100%;
   padding: 12px;
-  background-color: #6c63ff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  background: #4a6cf7;
+  color: #fff;
   font-size: 16px;
-  transition: background 0.3s ease;
-  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease;
 }
 
-form button:hover {
-  background-color: #5548e0;
+.btn-submit:hover {
+  background: #3653d9;
+}
+
+/* Redirect text */
+.redirect-text {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.redirect-text a {
+  color: #4a6cf7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.redirect-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 20px;
+  }
+
+  .input-group input,
+  .input-group select {
+    font-size: 14px;
+  }
 }

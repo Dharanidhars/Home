@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // Pages
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Home from "./pages/Home";
 import ForgotPassword from "./pages/ForgotPassword";
 import AddProperty from "./pages/AddProperty";
 import PropertyList from "./pages/PropertyList";
@@ -28,37 +30,41 @@ const App = () => {
     <Router>
       <div className="app">
         <Navbar />
-        <main style={{ minHeight: "80vh", padding: "20px" }}>
+        <main style={{ minHeight: "80vh" }}>
           <Routes>
-            <Route path="/" element={<PropertyList />} />
-            <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
-            <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
+            {/* Public */}
+            <Route path="/" element={<Home />} />
+            <Route path="/properties" element={<PropertyList />} />
             <Route path="/property/:id" element={<PropertyDetails />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
 
-            {/* Owner-only Route */}
+            {/* Guests only */}
+            <Route
+              path="/login"
+              element={!user ? <Login /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/register"
+              element={!user ? <Register /> : <Navigate to="/" />}
+            />
+
+            {/* Owner only */}
             <Route
               path="/add-property"
-              element={
-                user?.role === "owner" ? <AddProperty /> : <Navigate to="/login" />
-              }
+              element={user?.role === "owner" ? <AddProperty /> : <Navigate to="/login" />}
             />
             <Route
               path="/dashboard/owner"
-              element={
-                user?.role === "owner" ? <OwnerDashboard /> : <Navigate to="/login" />
-              }
+              element={user?.role === "owner" ? <OwnerDashboard /> : <Navigate to="/login" />}
             />
 
-            {/* Tenant-only Route */}
+            {/* Tenant only */}
             <Route
               path="/dashboard/tenant"
-              element={
-                user?.role === "tenant" ? <TenantDashboard /> : <Navigate to="/login" />
-              }
+              element={user?.role === "tenant" ? <TenantDashboard /> : <Navigate to="/login" />}
             />
 
-            {/* Catch-all fallback */}
+            {/* Fallback */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>

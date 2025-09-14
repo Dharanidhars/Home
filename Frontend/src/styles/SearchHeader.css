@@ -1,0 +1,150 @@
+:root {
+  --radius: 28px;
+  --border: #e6e6e6;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-focus: 0 6px 22px rgba(76, 71, 255, 0.15);
+  --brand: #6c63ff;     /* focus ring */
+  --action: #28a745;    /* green button */
+  --action-hover: #218838;
+  --text: #222;
+  --muted: #8a8a8a;
+  --bg: #fff;
+  --field-height: 52px; /* ✅ master height for all fields */
+}
+
+/* Container */
+.search-header {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+  margin: 16px 0 26px;
+  width: 100%;
+}
+
+/* Main pill */
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 980px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--brand);
+  box-shadow: var(--shadow-focus);
+}
+
+/* ===== City dropdown ===== */
+.city-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px 0 16px;
+  height: var(--field-height);
+  min-width: 200px;
+  border-right: 1px solid var(--border);
+}
+
+.city-icon {
+  color: var(--brand);
+  font-size: 16px;
+}
+
+.city-select {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  height: 100%;       /* ✅ full height match */
+  line-height: var(--field-height);
+}
+
+/* ===== Input ===== */
+.query-input {
+  flex: 1 1 auto;
+  border: 0;
+  outline: none;
+  font-size: 15px;
+  color: var(--text);
+  padding: 0 16px;
+  height: var(--field-height);   /* ✅ same height */
+  line-height: var(--field-height);
+  min-width: 220px;
+}
+
+.query-input::placeholder {
+  color: var(--muted);
+}
+
+/* ===== Button ===== */
+.search-btn {
+  display: flex;                  /* force perfect centering */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  height: var(--field-height);    /* exact same height */
+  padding: 0 24px;                /* consistent padding */
+  margin: 0;                      /* remove default button margin */
+  line-height: 1;                 /* ✅ fix misalignment of text */
+
+  background: var(--action);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;                /* slightly smaller for balance */
+  border: none;
+  outline: none;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-btn i {
+  font-size: 15px;                /* keep icon aligned with text */
+  line-height: 1;
+}
+
+.search-btn:hover {
+  background: var(--action-hover);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  .search-box {
+    flex-direction: column;
+    border-radius: 14px;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .city-field {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+
+  .query-input {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    height: 48px;
+    line-height: 48px;
+  }
+
+  .search-btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+  }
+}

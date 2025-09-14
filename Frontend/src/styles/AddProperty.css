@@ -1,56 +1,164 @@
-.add-property-form {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 30px 50px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+.add-property-container {
   display: flex;
-  flex-direction: column;
-  gap: 18px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.add-property-form {
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .add-property-form h2 {
   text-align: center;
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.add-property-form input,
-.add-property-form textarea,
-.add-property-form select {
-  padding: 12px;
+/* Input Group */
+.input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c63ff;
   font-size: 16px;
+}
+
+/* Special case for description (icon aligned at top-left) */
+.textarea-group .input-icon.top-icon {
+  top: 14px;
+  transform: none;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fafafa;
-}
-
-.add-property-form textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-.add-property-form input:focus,
-.add-property-form textarea:focus {
+  border-radius: 6px;
+  font-size: 14px;
   outline: none;
-  border-color: #6c63ff;
-  background: #fff;
 }
 
-.add-property-form button {
+.input-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Row layout */
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.row .input-group {
+  flex: 1;
+}
+
+/* File Input */
+.file-input input[type="file"] {
+  padding-left: 40px;
+}
+
+/* Image Preview */
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+/* Image Preview */
+.image-preview {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Delete Button */
+.remove-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(200, 200, 200, 0.5); /* 🔹 Light grey & semi-transparent */
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.remove-btn svg {
+  color: #e63946;   /* 🔹 Trash icon red by default */
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.remove-btn:hover {
+  background: rgba(230, 57, 70, 0.95); /* 🔥 Solid red on hover */
+  transform: scale(1.1);
+}
+
+.remove-btn:hover svg {
+  color: #fff; /* Icon turns white on hover */
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
   padding: 14px;
-  background-color: #6c63ff;
-  color: white;
-  font-weight: bold;
+  background: #28a745;
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .add-property-form {
-    padding: 25px;
-    margin: 20px;
+.submit-btn:hover {
+  background: #218838;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .image-preview {
+    width: 100px;
+    height: 100px;
   }
 }

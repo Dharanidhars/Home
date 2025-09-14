@@ -1,49 +1,129 @@
-.form-container {
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 30px;
-  background-color: #ffffff;
+:root {
+  --primary: #28a745;
+  --primary-hover: #218838;
+  --border: #ddd;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --text: #333;
+  --muted: #888;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+.login-form {
+  background: #fff;
+  padding: 32px;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-form h2 {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
   text-align: center;
-  margin-bottom: 20px;
-  color: #222;
 }
 
-form input,
-form select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+.login-form h2 {
+  margin-bottom: 24px;
+  color: var(--text);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Input Group */
+.input-group {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-group .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: var(--muted);
   font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
 }
 
-form input:focus,
-form select:focus {
-  outline: none;
-  border-color: #6c63ff;
-  background-color: #fff;
-}
-
-form button {
+.input-group input {
   width: 100%;
-  padding: 12px;
-  background-color: #6c63ff;
-  color: white;
+  padding: 12px 14px 12px 40px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+}
+
+/* Toggle Eye Icon */
+.toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.toggle-icon:hover {
+  color: var(--primary);
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
   border: none;
   border-radius: 6px;
-  font-weight: bold;
   font-size: 16px;
-  transition: background 0.3s ease;
-  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-form button:hover {
-  background-color: #5548e0;
+.login-btn:hover {
+  background: var(--primary-hover);
+  transform: scale(1.03);
+}
+
+/* Forgot Link */
+.forgot-link {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.forgot-link a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot-link a:hover {
+  color: var(--primary-hover);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 24px;
+  }
+
+  .login-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
 }

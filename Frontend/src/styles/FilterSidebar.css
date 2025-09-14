@@ -1,0 +1,101 @@
+/* ===== Filter Sidebar ===== */
+.filter-sidebar {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 250px;
+  height: fit-content;
+  position: sticky;
+  top: 6rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.filter-sidebar h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-sidebar label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 10px 0 6px;
+  color: #444;
+}
+
+.filter-sidebar label i {
+  margin-right: 6px;
+  color: #6c63ff;
+}
+
+.filter-sidebar select,
+.filter-sidebar input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-sidebar select:focus,
+.filter-sidebar input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+/* Buttons */
+.filter-sidebar button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.apply-btn {
+  background: #6c63ff;
+  color: white;
+  margin-top: 5px;
+}
+
+.apply-btn:hover {
+  background: #5146e0;
+  transform: scale(1.02);
+}
+
+.clear-btn {
+  background: #f0f0f0;
+  color: #333;
+  margin-top: 10px;
+}
+
+.clear-btn:hover {
+  background: #e0e0e0;
+  transform: scale(1.02);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .filter-sidebar {
+    width: 100%;
+    max-width: 500px;
+    position: static;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    box-shadow: none;
+  }
+}
