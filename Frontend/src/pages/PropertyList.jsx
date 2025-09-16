@@ -5,7 +5,7 @@ import FilterSidebar from "../components/FilterSidebar";
 import PropertyCard from "../components/PropertyCard";
 import "../styles/PropertyList.css";
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API = import.meta.env.VITE_API_URL;
 
 const PropertyList = () => {
   const [properties, setProperties] = useState([]);
