@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../styles/TenantDashboard.css";
+import API_BASE_URL from "../utils/api";
 
 const TenantDashboard = () => {
   const [wishlist, setWishlist] = useState([]);
@@ -11,13 +12,13 @@ const TenantDashboard = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:5000/api/wishlist", {
+      .get(`${API_BASE_URL}/api/wishlist`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setWishlist(res.data));
 
     axios
-      .get("http://localhost:5000/api/inquiries/tenant", {
+      .get(`${API_BASE_URL}/api/inquiries/tenant`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setInquiries(res.data));
@@ -36,7 +37,7 @@ const TenantDashboard = () => {
     if (!window.confirm("Are you sure to delete this inquiry?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/inquiries/${id}`, {
+      await axios.delete(`${API_BASE_URL}/api/inquiries/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setInquiries((prev) => prev.filter((i) => i._id !== id));

@@ -12,7 +12,21 @@ connectDB();
 const app = express();
 
 // Middlewares
-app.use(cors());
+const allowedOrigins = [
+  "https://homieproject.netlify.app/", // change to your real Netlify URL
+  "http://localhost:3000",
+  "http://localhost:5000",
+  "http://localhost:5173",
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Health check

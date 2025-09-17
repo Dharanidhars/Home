@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaUser, FaEnvelope, FaLock, FaUserTag } from "react-icons/fa";
 import "../styles/Register.css";
+import API_BASE_URL from "../utils/api";
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -16,7 +17,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", form);
+      const res = await axios.post(`${API_BASE_URL}/api/auth/register`, form);
       alert(res.data.msg);
       setForm({ name: "", email: "", password: "", role: "tenant" });
       navigate("/login");

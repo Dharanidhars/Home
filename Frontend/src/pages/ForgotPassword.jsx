@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { FaEnvelope, FaLock, FaKey, FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/ForgotPassword.css";
+import API_BASE_URL from "../utils/api";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ const ForgotPassword = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/reset-password-direct",
+        `${API_BASE_URL}/api/auth/reset-password-direct`,
         { email, newPassword }
       );
       alert(res.data.msg);
